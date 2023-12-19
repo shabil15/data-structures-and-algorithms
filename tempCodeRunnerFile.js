@@ -1,2 +1,2 @@
-console.log(fibonacci(2));
-console.log(fibonacci(5));
+
+  let mi= Math.floor((li+ri)/2)
