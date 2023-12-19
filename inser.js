@@ -132,6 +132,21 @@ class LinkedList {
 
   }
 
+  reverse(){
+    let prev = null
+    let curr = this.head 
+      while(curr){
+        let next = curr.next
+        curr.next = prev
+        prev =curr
+        curr = next 
+      }
+      this.head = prev;
+  }
+
+
+ 
+
   print(){
     
     if(this.isEmpty()){
@@ -160,5 +175,6 @@ list.insert(40,3)
 // list.removeFrom(2)
 // list.removeFrom(2)
 
-console.log(list.search(40));
+
+list.reverse()
 list.print()
