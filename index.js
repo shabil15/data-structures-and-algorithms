@@ -8,9 +8,9 @@ function fibonacci(n) {
   return fib;
 }
 
-console.log(fibonacci(2));
-console.log(fibonacci(5));
-console.log(fibonacci(7));
+// console.log(fibonacci(2));
+// console.log(fibonacci(5));
+// console.log(fibonacci(7));
 
 
 
@@ -22,3 +22,5 @@ function factorial (n) {
   }
   return result
 }
+
+console.log(factorial(5));
