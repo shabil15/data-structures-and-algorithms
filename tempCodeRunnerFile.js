@@ -1,2 +1,2 @@
-
-  let mi= Math.floor((li+ri)/2)
+console.log(reverse('Shabil'));
+// console.log(reverse('BASHEER'));
