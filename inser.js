@@ -45,7 +45,7 @@ class LinkedList {
     }
     this.size++
   }
-
+              
   insert(value,index){
      let node = new Node(value)
     if(index<0 || index >this.size){
@@ -59,7 +59,7 @@ class LinkedList {
       for(let i=0;i<index-1;i++){
         prev = prev.next
       }
-      node.next = prev.next 
+      node.next = prev.next   
       prev.next = node
       this.size ++
     }
