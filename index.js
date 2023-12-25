@@ -13,6 +13,25 @@ function fibonacci(n) {
 // console.log(fibonacci(7));
 
 
+function fibonacci(n){
+  const fib= [0,1]
+  for(let i=2;i<n;i++){
+    fib[i] = fib[i-1]+fib[i-2];
+  }
+  return fib
+}
+
+console.log(fibonacci(10));
+
+
+function fibo(n){
+  if(n<2){
+    return 1
+  } 
+  return 
+}
+
+
 
 function factorial (n) {
   let result = 1
@@ -86,6 +105,8 @@ function isPrime(n){
   return recFibonacci(n-1) + recFibonacci (n-2)
  }
 
+
+
 //  console.log(recFibonacci(4));
 //  console.log(recFibonacci(5));
 
@@ -106,3 +127,4 @@ console.log(recFactorial(0));
 
 
 
+  

@@ -24,7 +24,7 @@ function binarySearch (arr,target) {
       return mi
     }
     if(target< arr[mi]){
-      ri = mi-1
+      ri = mi-1       
     }else{
       li = mi+1
     }

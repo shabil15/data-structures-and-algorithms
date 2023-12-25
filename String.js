@@ -105,7 +105,7 @@ function replaceNts (str,n){
   let res = ''
   for(let i=0;i<str.length;i++){
     pos = alphabet.indexOf(str[i])
-    res += alphabet[(pos+n)%alphabet.length]
+    res += alphabet[(pos+n)]
   }
   return res
 }
