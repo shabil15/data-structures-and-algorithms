@@ -1,2 +1,2 @@
-console.log(reverse('Shabil'));
-// console.log(reverse('BASHEER'));
+
+    const node = new Node(value)
