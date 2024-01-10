@@ -40,19 +40,7 @@ class BinarySearchTree{
     }
   }
 
-  // search(root,value){
-  //   if(this.isEmpty()){
-  //     return false
-  //   }else{
-  //     if(root.value === value){
-  //       return true
-  //     }else if(value < root.value){
-  //       return this.search (root.left,value)
-  //     }else{
-  //       return this.search(root.right,value)
-  //     }
-  //   }
-  // }
+ 
 
 
   search(root,value){
@@ -91,17 +79,31 @@ class BinarySearchTree{
     if(root){
       this.postOrder(root.left)
       this.postOrder(root.right)
-      console.log(root.value);
+      console.log(root.value);    
     }
   }
 
-  levelOrder(){
-    const queue =[]
-
-    queue.push(this.root)
+  // levelOrder(){ 
+  //   const queue =[]
+  //   queue.push(this.root)
     
+  //   while(queue.length){
+  //     let cur=queue.shift()
+  //     console.log(cur.value);
+  //     if(cur.left){
+  //       queue.push(cur.left)
+  //     }
+  //     if(cur.right){
+  //       queue.push(cur.right)
+  //     }
+  //   }
+  // }
+
+  levelOrder(){
+    const queue = []
+    queue.push(this.root)
     while(queue.length){
-      let cur=queue.shift()
+      let cur = queue.shift()
       console.log(cur.value);
       if(cur.left){
         queue.push(cur.left)
@@ -156,6 +158,31 @@ class BinarySearchTree{
     }
     return root 
   }
+
+
+  findClosestValue(target){
+    return this.findClosestValueInBst(this.root,target)
+  }
+
+  findClosestValueInBst(tree,target){
+    let closest = tree.value
+
+    const traverse = (inputTree) =>{
+      if(inputTree === null ) return;
+      if(Math.abs(target -closest) > Math.abs(target -inputTree.value)){
+        closest  = inputTree.value
+      }
+
+      if(target < inputTree.value){
+        traverse (inputTree.left);
+      }else {
+        traverse (inputTree.right)
+      }
+    }
+
+    traverse(tree);
+    return closest;
+  }
 }
 
 const BST  = new BinarySearchTree()
@@ -169,9 +196,12 @@ BST.insert(7)
 // BST.preOrder(BST.root)
 // BST.postOrder(BST.root)
 BST.levelOrder();
-BST.delete(15)
+
 BST.levelOrder();
 
+const target = 15;
+const closestval = BST.findClosestValue(target)
+console.log("the closest " ,closestval);
 // console.log(BST);
 // console.log(BST.min(BST.root));
 // console.log(BST.max(BST.root));
