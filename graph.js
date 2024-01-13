@@ -1,4 +1,4 @@
-// class Graph {
+      // class Graph {
 //   constructor() {
 //     this.adjacencyList ={}
 //   }
@@ -49,10 +49,10 @@
 //   }
 // }
 
+
 class Graph {
   constructor() {
     this.adjacencyList = {}
-
   }
 
   addVertex(vertex){
@@ -74,31 +74,33 @@ class Graph {
   }
 
   hasEdge(vertex1,vertex2){
-    return (this.adjacencyList[vertex1].has(vertex2)&&
+    return (this.adjacencyList[vertex1].has(vertex2) &&
       this.adjacencyList[vertex2].has(vertex1)
     )
   }
 
   removeEdge(vertex1,vertex2){
-    this.adjacencyList[vertex1].delete(vertex2)
-    this.adjacencyList[vertex2].delete(vertex1)
+        this.adjacencyList[vertex1].delete(vertex2)
+        this.adjacencyList[vertex2].delete(vertex1)
   }
 
-  removeVertex(vertex){
+  removeVertex (vertex){
     if(!this.adjacencyList[vertex]){
       return 
     }
-
-    for(let adjacenctVertex of this.adjacencyList[vertex]){
-      this.removeEdge(vertex,adjacenctVertex)
+    for(let adjvertex of this.adjacencyList){
+       this.removeEdge(adjvertex,vertex)
     }
     delete this.adjacencyList[vertex]
   }
+
   display(){
     for(let vertex in this.adjacencyList){
-      console.log(vertex +'->' + [...this.adjacencyList[vertex]]);
+      console.log(vertex + '->'+ [...this.adjacencyList[vertex]]);
     }
   }
+
+
 }
 
  const graph = new Graph()
